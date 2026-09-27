@@ -1,0 +1,19 @@
+# walk.yaml -- slow deliberate walk
+period_s: 1.4
+frames:
+  - hip_l: -15
+    knee_l: 70
+    hip_r: 0
+    knee_r: 90
+  - hip_l: 0
+    knee_l: 90
+    hip_r: 15
+    knee_r: 70
+  - hip_l: 15
+    knee_l: 70
+    hip_r: 0
+    knee_r: 90
+  - hip_l: 0
+    knee_l: 90
+    hip_r: -15
+    knee_r: 70

@@ -1,0 +1,110 @@
+{
+  "version": "2.1.0",
+  "last_updated": "2025-03-01",
+  "components": [
+    {
+      "id": "neural-unit",
+      "name": "Claude Neural Unit v3",
+      "part_number": "OCL-NUv3-A",
+      "role": "Inference, instinct modeling, personality engine",
+      "supplier_primary": "OpenClaw Store",
+      "supplier_alt": ["Taobao: search 'openclaw neural unit'", "eBay: seller 'openclaw_official'"],
+      "approx_cost_usd": 89,
+      "interface": "UART + I2C",
+      "datasheet": "https://openclaw.dev/docs/neural-unit-v3"
+    },
+    {
+      "id": "vision-module",
+      "name": "ClaudeVision-Lite",
+      "part_number": "OCL-CVL-01",
+      "role": "Face recognition, object tracking, depth estimation",
+      "supplier_primary": "Taobao",
+      "supplier_alt": ["eBay"],
+      "approx_cost_usd": 34,
+      "interface": "USB-C / MIPI CSI",
+      "notes": "Compatible with RPi CSI-2 ribbon or USB mode"
+    },
+    {
+      "id": "tactile-array",
+      "name": "SenseFur v2",
+      "part_number": "SF-v2-128",
+      "role": "128-point capacitive pressure + temperature mesh",
+      "supplier_primary": "DIY (see hardware/sensefur/BOM.md)",
+      "supplier_alt": ["Local electronics store"],
+      "approx_cost_usd": 22,
+      "interface": "I2C @ 0x48",
+      "notes": "ATtiny84 multiplexer, soldering required"
+    },
+    {
+      "id": "skeleton",
+      "name": "FlexBone-X",
+      "part_number": "FBX-3DP-v3",
+      "role": "12-DOF aluminum/TPU articulated frame",
+      "supplier_primary": "3D print (files in hardware/flexbone/)",
+      "supplier_alt": ["Local hardware store (fasteners)", "Taobao (servos)"],
+      "approx_cost_usd": 55,
+      "interface": "PWM via PCA9685",
+      "notes": "MG996R servos x12. Print TPU joints at 95% infill."
+    },
+    {
+      "id": "audio-chip",
+      "name": "PurrSynth v2.1",
+      "part_number": "PS-v21",
+      "role": "Real-time vocal synthesis, purr, meow, chirp",
+      "supplier_primary": "Taobao",
+      "supplier_alt": ["eBay"],
+      "approx_cost_usd": 14,
+      "interface": "UART"
+    },
+    {
+      "id": "battery",
+      "name": "MoodCell 4400mAh",
+      "part_number": "MC-4400-3S",
+      "role": "Adaptive discharge curve, battery level -> mood signal",
+      "supplier_primary": "eBay",
+      "supplier_alt": ["Taobao"],
+      "approx_cost_usd": 28,
+      "interface": "3S LiPo + analog mood pin"
+    },
+    {
+      "id": "charging-base",
+      "name": "RestPod v1",
+      "part_number": "RP-v1-QI",
+      "role": "Qi wireless charging base, sleep scheduler integration",
+      "supplier_primary": "Taobao",
+      "supplier_alt": ["eBay"],
+      "approx_cost_usd": 17,
+      "interface": "Qi 10W + GPIO trigger"
+    },
+    {
+      "id": "skin",
+      "name": "Silicone skin casing",
+      "part_number": "CUSTOM",
+      "role": "Outer enclosure, tactile surface over SenseFur",
+      "supplier_primary": "DIY (mold files in hardware/skin/)",
+      "supplier_alt": ["Smooth-On Ecoflex 00-30", "Local hardware for mold materials"],
+      "approx_cost_usd": 30
+    },
+    {
+      "id": "tail",
+      "name": "TailSense v2",
+      "part_number": "TS-v2-3DOF",
+      "role": "3-DOF articulated tail + touch sensor at tip",
+      "supplier_primary": "3D print (files in hardware/tail/)",
+      "supplier_alt": ["Taobao (micro servo)"],
+      "approx_cost_usd": 12,
+      "interface": "PWM + GPIO touch"
+    },
+    {
+      "id": "compute",
+      "name": "Raspberry Pi 4B or 5",
+      "part_number": "SC0194 / SC1112",
+      "role": "Host OS, all firmware runtime processes",
+      "supplier_primary": "Local electronics",
+      "supplier_alt": ["rpilocator.com"],
+      "approx_cost_usd": 55,
+      "notes": "Minimum 4GB RAM. 8GB recommended for vision + personality concurrently."
+    }
+  ],
+  "total_approx_cost_usd": 406
+}

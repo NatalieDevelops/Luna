@@ -1,0 +1,59 @@
+# config.yaml -- ruby reference configuration
+# All paths relative to repo root unless absolute.
+
+neural_unit:
+  port: /dev/ttyUSB0
+  baud: 115200
+  personality_persistence: true
+  snapshot_interval_s: 300        # flush personality snapshot every 5 min
+
+vision:
+  camera_index: 0
+  resolution: [640, 480]
+  fps: 30
+  face_db: config/faces.db
+  confidence_threshold: 0.82
+  depth_model: config/depth_lite.onnx
+  track_max_objects: 8
+
+tactile:
+  i2c_bus: 1
+  i2c_address: 0x48
+  sample_rate_hz: 100
+  calibration_file: config/sensefur_cal.bin
+  zones:
+    head:   [0,  31]
+    back:   [32, 63]
+    belly:  [64, 95]
+    paws:   [96, 127]
+
+audio:
+  port: /dev/ttyUSB1
+  baud: 115200
+  voice_profile: ruby_v2
+  volume: 0.7
+  sample_rate_hz: 22050
+
+locomotion:
+  servo_hz: 50
+  max_torque_nm: 2.5
+  gait_library: config/gaits/
+  home_pose_ms: 200               # time to return to neutral pose
+
+personality:
+  db: data/ruby.db
+  trait_drift_rate: 0.001         # per interaction event
+  mood_decay_rate: 0.0005         # per second toward 0.5 neutral
+  trust_decay_rate: 0.0001        # per second of no interaction
+
+power:
+  restpod_charge_threshold: 0.25  # go charge below 25%
+  restpod_full_threshold: 0.95    # stop charging above 95%
+  mood_signal_enabled: true       # battery level influences energy affect
+  low_power_mode_threshold: 0.10  # reduce servo torque + vision fps
+
+logging:
+  level: INFO
+  file: logs/ruby.log
+  max_bytes: 10485760             # 10 MB
+  backup_count: 5

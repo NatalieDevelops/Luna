@@ -1,0 +1,30 @@
+# trot.yaml -- diagonal trot gait
+# period_s: duration of one full gait cycle at speed=1.0
+period_s: 0.8
+poses:
+  trot_home:
+    hip_l: 0
+    hip_r: 0
+    knee_l: 90
+    knee_r: 90
+frames:
+  - hip_l: -20
+    knee_l: 60
+    hip_r: 20
+    knee_r: 100
+    spine_1: 5
+  - hip_l: 0
+    knee_l: 90
+    hip_r: 0
+    knee_r: 90
+    spine_1: 0
+  - hip_l: 20
+    knee_l: 100
+    hip_r: -20
+    knee_r: 60
+    spine_1: -5
+  - hip_l: 0
+    knee_l: 90
+    hip_r: 0
+    knee_r: 90
+    spine_1: 0
